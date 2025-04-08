@@ -1,0 +1,22 @@
+✅ A. Cloud Fundamentals (AWS or Azure)
+1. Core Concepts of Cloud Computing:
+Model	Description	Benefits for Java Apps
+IaaS (Infrastructure as a Service)	Offers virtualized computing resources over the internet (e.g., EC2 on AWS)	Full control of OS and app stack, great for customizing Java runtime
+PaaS (Platform as a Service)	Provides a platform allowing developers to build apps without managing infrastructure (e.g., AWS Elastic Beanstalk, Azure App Service)	Quick deployment, auto-scaling, no server maintenance
+SaaS (Software as a Service)	Software apps hosted by a provider and available via the internet (e.g., Gmail, Office365)	Useful for third-party integrations into your app
+Benefits for Java Applications:
+
+Scalability: Auto-scale instances to handle more users/posts.
+
+Elasticity: Scale up/down based on demand (e.g., weekend surges).
+
+Cost-Effectiveness: Pay-as-you-go; no need for on-prem infrastructure.
+
+2. Cloud Services for Social Media App (Using AWS):
+Feature	AWS Service	Use in Social Media App
+Compute	Amazon EC2 or Elastic Beanstalk	Host Java app (backend API)
+Database	Amazon RDS (MySQL/PostgreSQL) or DynamoDB	Store user profiles, posts
+Storage	Amazon S3	Store images, videos, profile pictures
+Monitoring	CloudWatch	Monitor performance, set alarms
+Security	IAM	Secure access to services and data
+Deployment	CodeDeploy or Elastic Beanstalk	Easy deployment and versioning
