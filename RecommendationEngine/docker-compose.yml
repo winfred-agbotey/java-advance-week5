@@ -1,0 +1,25 @@
+services:
+  spark-master:
+    image: bitnami/spark:3.2.1
+    environment:
+      JDK_JAVA_OPTIONS: --add-opens=java.base/sun.nio.ch=ALL-UNNAMED
+      SPARK_MODE: master
+      HADOOP_HOME: /opt/bitnami/hadoop
+    ports:
+      - "8082:8080"
+      - "8083:7077"
+
+    volumes:
+      - "./spark-logs:/spark/logs"
+
+  spark-worker:
+    image: bitnami/spark:3.2.1
+    depends_on:
+      - spark-master
+    environment:
+      JDK_JAVA_OPTIONS: --add-opens=java.base/sun.nio.ch=ALL-UNNAMED
+      SPARK_MODE: worker
+      HADOOP_HOME: /opt/bitnami/hadoop
+      SPARK_MASTER_URL: spark://spark-master:7077
+    volumes:
+      - "./spark-logs:/spark/logs"
